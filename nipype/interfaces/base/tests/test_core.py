@@ -457,7 +457,7 @@ def test_global_CommandLine_output(tmpdir):
     ci = BET()
     assert ci.terminal_output == "stream"  # default case
 
-    with mock.patch.object(nib.CommandLine, '_terminal_output'):
+    with mock.patch.object(nib.CommandLine, "_terminal_output"):
         nib.CommandLine.set_default_terminal_output("allatonce")
         ci = nib.CommandLine(command="ls -l")
         assert ci.terminal_output == "allatonce"
